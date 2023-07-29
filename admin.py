@@ -29,9 +29,10 @@ with st.form("Create new record"):
 # If the form is submitted, add the new record to the DataFrame
 if submit_button:
     new_record = {"Cliente": cliente, "Sociedad": sociedad}
-    data = data.append(new_record, ignore_index=True)
-    # Save the new record to the CSV file
-    data.to_csv('database.csv', index=False, mode='a', header=(not data.index.any()))
+    new_row = pd.DataFrame([new_record])
+    data = pd.concat([data, new_row], ignore_index=True)
+    # Save the updated DataFrame to the CSV file
+    data.to_csv('database.csv', index=False)
 
 # Display the updated data in a dataframe
 st.write("Updated Data:")
