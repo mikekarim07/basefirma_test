@@ -3,7 +3,7 @@ import pandas as pd
 import xlrd
 
 # Load the Excel file
-excel_file = "data.xlsx"
+excel_file = "database.xlsx"
 data = pd.read_excel(excel_file)
 
 # Create a form to create a new record
