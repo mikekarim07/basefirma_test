@@ -13,10 +13,11 @@ st.set_page_config(
 
 
 st.image("BaseFirmaLogo.png", width=150)
-st.write('hello world l')
+st.header('KPI's Dashboard')
 # Load the Excel file
 
 data = pd.read_csv('database.csv')
+
 
 st.dataframe(data)
 
