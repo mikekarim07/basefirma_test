@@ -16,9 +16,9 @@ st.image("https://basefirma.com/wp-content/uploads/2022/02/BaseFirma-LogoColor-2
 st.write('hello world l')
 # Load the Excel file
 
-data = pd.read_excel('database.xlsx',  sheet_name = 'Data', engine='openpyxl')
+data = pd.read_csv('database.csv')
 
-# st.dataframe(data)
+st.dataframe(data)
 
 # # Create a form to create a new record
 # st.form("Create new record")
