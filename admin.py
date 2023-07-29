@@ -1,10 +1,12 @@
 import streamlit as st
 import pandas as pd
-import xlrd
+
 
 # Load the Excel file
-excel_file = "database.xlsx"
-data = pd.read_excel(excel_file)
+
+data = pd.read_excel('database.xlsx',  sheet_name = 'Data', engine='openpyxl')
+
+st.dataframe(data)
 
 # Create a form to create a new record
 st.form("Create new record")
