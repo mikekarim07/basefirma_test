@@ -13,7 +13,7 @@ st.set_page_config(
 
 
 st.image("https://basefirma.com/wp-content/uploads/2022/02/BaseFirma-LogoColor-2048x850.png", width=150)
-st.write('hello world')
+st.write('hello world l')
 # Load the Excel file
 
 data = pd.read_excel('database.xlsx',  sheet_name = 'Data', engine='openpyxl')
