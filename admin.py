@@ -23,13 +23,13 @@ st.dataframe(data)
 
 # Create a form to create a new record
 st.form("Create new record")
-name = st.text_input("Name")
-email = st.text_input("Email")
+cliente = st.text_input("Cliente")
+sociedad = st.text_input("Razon Social")
 
-# # If the form is submitted, add the new record to the Excel file
-# if st.form_submitted():
-#     data = data.append({"Name": name, "Email": email}, ignore_index=True)
-#     data.to_excel(excel_file)
+# If the form is submitted, add the new record to the Excel file
+if st.form_submitted():
+    data = data.append({"Cliente": cliente, "Sociedad": sociedad}, ignore_index=True)
+    data.to_csv(data)
 
-# # Display the data in a dataframe
-# st.dataframe(data)
+# Display the data in a dataframe
+st.dataframe(data)
