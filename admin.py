@@ -11,25 +11,28 @@ st.set_page_config(
     }
 )
 
-
 st.image("BaseFirmaLogo.png", width=150)
 st.header('KPIs Dashboard')
-# Load the Excel file
 
+# Load the Excel file
 data = pd.read_csv('database.csv')
 
-
+# Display the data in a dataframe
 st.dataframe(data)
 
 # Create a form to create a new record
-st.form("Create new record")
-cliente = st.text_input("Cliente")
-sociedad = st.text_input("Razon Social")
+with st.form("Create new record"):
+    cliente = st.text_input("Cliente")
+    sociedad = st.text_input("Razon Social")
+    submit_button = st.form_submit_button(label='Add Record')
 
-# If the form is submitted, add the new record to the Excel file
-if st.form_submitted():
-    data = data.append({"Cliente": cliente, "Sociedad": sociedad}, ignore_index=True)
-    data.to_csv(data)
+# If the form is submitted, add the new record to the DataFrame
+if submit_button:
+    new_record = {"Cliente": cliente, "Sociedad": sociedad}
+    data = data.append(new_record, ignore_index=True)
+    # Save the new record to the CSV file
+    data.to_csv('database.csv', index=False, mode='a', header=(not data.index.any()))
 
-# Display the data in a dataframe
+# Display the updated data in a dataframe
+st.write("Updated Data:")
 st.dataframe(data)
