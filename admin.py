@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+st.image('https://basefirma.com/wp-content/uploads/2022/02/BaseFirma-LogoColor-2048x850.png', width= 250)
 st.write('hello world')
 # Load the Excel file
 
