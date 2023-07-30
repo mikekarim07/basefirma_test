@@ -46,8 +46,8 @@ with st.form("Create new record", clear_on_submit=True):
         gerente = st.selectbox("Seleciona al Grupo:", gerentes)
 
     with col2:
-        tiempo_est = st.number_input(min_value=0, step=0.5)
-        tiempo_real = st.number_input(min_value=0, step=0.5)
+        tiempo_est = st.number_input("Horas Estimadas", min_value=0, step=0.5)
+        tiempo_real = st.number_input("Horas Reales", min_value=0, step=0.5)
         fecha_est = st.date_input("Fehca Estimada de Entrega", datetime.date())
         fecha_real = st.date_input("Fehca Real de Entrega", datetime.date())
 
