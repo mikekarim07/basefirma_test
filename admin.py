@@ -15,7 +15,7 @@ st.set_page_config(
 
 st.sidebar.image("BaseFirmaLogo.png", caption="Your Go-To Transfer Pricing Firm in the Americas")
 
-st.image("BaseFirmaLogo.png", width=150)
+# st.image("BaseFirmaLogo.png", width=150)
 st.header('KPIs Dashboard')
 
 # Load the Excel file
