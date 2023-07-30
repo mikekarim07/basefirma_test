@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import datetime
-
+from streamlit_option_menu import option_menu
 
 st.set_page_config(
     page_title="Base Firma",
@@ -11,6 +11,13 @@ st.set_page_config(
     menu_items={
         'Get Help': 'mailto:miguel.karim@karimortega.com'
     }
+)
+
+selected = option_menu(
+    menu_title = None,
+    options = ["Nuevo Registro", "Data"],
+    icons = ["pencil-fill", "bar-chart-fill"],
+    orientation = "horizontal,
 )
 
 st.image("BaseFirmaLogo.png", width=150)
