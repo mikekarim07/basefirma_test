@@ -19,11 +19,31 @@ data = pd.read_csv('database.csv')
 #sidebar menu & filters
 st.sidebar.image("BaseFirmaLogo.png", caption="Your Go-To Transfer Pricing Firm in the Americas")
 st.sidebar.header("Aplicar los filtros")
-Clientes = st.sidebar.multiselect(
+filtro_clientes = st.sidebar.multiselect(
     "Selecciona al Grupo Corporativo",
     options = data['Cliente'].unique(),
     default = data['Cliente'].unique(),
 )
+
+filtro_consultor = st.sidebar.multiselect(
+    "Selecciona al Consultor",
+    options = data['Consultor'].unique(),
+    default = data['Consultor'].unique(),
+)
+
+filtro_consultor_sr = st.sidebar.multiselect(
+    "Selecciona al Senior",
+    options = data['Senior'].unique(),
+    default = data['Senior'].unique(),
+)
+
+filtro_gerente = st.sidebar.multiselect(
+    "Selecciona al Gerente",
+    options = data['Gerente'].unique(),
+    default = data['Gerente'].unique(),
+)
+
+
 
 # st.image("BaseFirmaLogo.png", width=150)
 st.header('KPIs Dashboard')
