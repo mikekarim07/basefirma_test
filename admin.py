@@ -41,9 +41,9 @@ with st.form("Create new record", clear_on_submit=True):
         proyecto = st.text_input("Proyecto")
     
     with col2:
-        consultor = st.selectbox("Seleciona al Grupo:", consultores)
-        senior = st.selectbox("Seleciona al Grupo:", consultores_sr)
-        gerente = st.selectbox("Seleciona al Grupo:", gerentes)
+        consultor = st.selectbox("Seleciona al Consultor:", consultores)
+        senior = st.selectbox("Seleciona al Consultor Sr:", consultores_sr)
+        gerente = st.selectbox("Seleciona al Gerente:", gerentes)
 
     with col3:
         tiempo_est = st.number_input("Horas Estimadas")
