@@ -49,13 +49,14 @@ with st.form("Create new record", clear_on_submit=True):
         tiempo_est = st.number_input("Horas Estimadas")
         tiempo_real = st.number_input("Horas Reales")
         fecha_est = st.date_input("Fecha Estimada de Entrega", datetime.date(2023,1,1))
-        fecha_real = st.date_input("Fecha Real de Entrega", datetime.date(fecha_est))
+        fecha_real = st.date_input("Fecha Real de Entrega", datetime.date(2023,1,1))
 
     submit_button = st.form_submit_button(label='Add Record')
 
 # If the form is submitted, add the new record to the DataFrame
 if submit_button:
-    new_record = {"Cliente": cliente, "Sociedad": sociedad}
+    new_record = {"Cliente": cliente, "Sociedad": sociedad, "Proyecto": proyecto, "Consultor": consultor, "Senior": senior, "Gerente": gerente, "Tiempo estimado de Atividad": tiempo_est, "Fecha Planeada": fecha_est,
+                 "Fecha de entrega efectiva": fecha_real, "Tiempo Real": tiempo_real}
     new_row = pd.DataFrame([new_record])
     data = pd.concat([data, new_row], ignore_index=True)
     # Save the updated DataFrame to the CSV file
