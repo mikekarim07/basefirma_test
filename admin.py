@@ -32,8 +32,8 @@ sociedades = ["ABA Asistencias", "ABA Garantias SA de CV", "Acciona Agua Mexico 
 
 
 # Create a form to create a new record
-with st.form("Create new record"):
-    col1, col2 = st.columns(2)
+with st.form("Create new record", clear_on_submit=True):
+    col1, col2, col3 = st.columns(3)
     
     with col1:
         cliente = st.selectbox("Seleciona al Grupo:", grupos)
@@ -44,7 +44,13 @@ with st.form("Create new record"):
         consultor = st.selectbox("Seleciona al Grupo:", consultores)
         senior = st.selectbox("Seleciona al Grupo:", consultores_sr)
         gerente = st.selectbox("Seleciona al Grupo:", gerentes)
-        
+
+    with col2:
+        tiempo_est = st.number_input(min_value=0, step=0.5)
+        tiempo_real = st.number_input(min_value=0, step=0.5)
+        fecha_est = st.date_input("Fehca Estimada de Entrega", datetime.date())
+        fecha_real = st.date_input("Fehca Real de Entrega", datetime.date())
+
     submit_button = st.form_submit_button(label='Add Record')
 
 # If the form is submitted, add the new record to the DataFrame
