@@ -17,7 +17,7 @@ selected = option_menu(
     menu_title = None,
     options = ["Nuevo Registro", "Data"],
     icons = ["pencil-fill", "bar-chart-fill"],
-    orientation = "horizontal,
+    orientation = "horizontal",
 )
 
 st.image("BaseFirmaLogo.png", width=150)
