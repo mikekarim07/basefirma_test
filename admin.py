@@ -18,7 +18,7 @@ st.header('KPIs Dashboard')
 data = pd.read_csv('database.csv')
 
 # Display the data in a dataframe
-st.expander("Tabla"):
+with st.expander("Tabla"):
     st.dataframe(data)
 
 # Create a form to create a new record
