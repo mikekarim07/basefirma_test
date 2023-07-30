@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import datetime
+
 
 st.set_page_config(
     page_title="Base Firma",
@@ -20,11 +22,29 @@ data = pd.read_csv('database.csv')
 # Display the data in a dataframe
 with st.expander("Tabla"):
     st.dataframe(data)
+#--settings--
+gerentes = ["Jaime Romero", "Karen Ramos"]
+consultores = ["Jorge Amaya", "Leslie Castillo", "Martin Rivera", "Rebeca Sandoval", "Otro"] 
+consultores_sr = ["Brenda Salazar", "Christian Huitron", "Guillermo Pato"]
+grupos = ["CHUBB", "ACCIONA", "Crehana", "Corona", "Adabe Capital", "Luxottica", "Grupo IAMSA", "Melia"]
+sociedades = ["ABA Asistencias", "ABA Garantias SA de CV", "Acciona Agua Mexico S RL CV (AGUA)", "Acciona Energía México, S. de R.L. de C.V. (ENERGIA)", "Acciona Energía Servicios México, S. de R.L. de C.V. (ENERGIA)", "Acciona Eólica Santa Cruz S. R.L. de C.V. (ENERGIA)"
+              "Acciona Forwarding (SERVICES)", "Acciona Infraestructuras México, S.A. de C.V. (INFRAESTRUCTURA)", "Acciona Infraestructuras Residenciales México, S.A. de C.V. (INFRAESTRUCTURA)"]
+
 
 # Create a form to create a new record
 with st.form("Create new record"):
-    cliente = st.text_input("Cliente")
-    sociedad = st.text_input("Razon Social")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        cliente = st.selectbox("Seleciona al Grupo:", grupos)
+        sociedad = st.selectbox("Seleciona la entidad legal:", sociedades)
+        proyecto = st.text_input("Proyecto")
+    
+    with col2:
+        consultor = st.text_input("Consultor")
+        senior = st.text_input("Senior")
+        gerente = st.text_input("Gerente")
+        
     submit_button = st.form_submit_button(label='Add Record')
 
 # If the form is submitted, add the new record to the DataFrame
