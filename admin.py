@@ -13,6 +13,10 @@ st.set_page_config(
     }
 )
 
+# Load the Excel file
+data = pd.read_csv('database.csv')
+
+#sidebar menu & filters
 st.sidebar.image("BaseFirmaLogo.png", caption="Your Go-To Transfer Pricing Firm in the Americas")
 st.sidebar.header("Aplicar los filtros")
 Clientes = st.sidebar.multiselect(
@@ -23,8 +27,6 @@ Clientes = st.sidebar.multiselect(
 # st.image("BaseFirmaLogo.png", width=150)
 st.header('KPIs Dashboard')
 
-# Load the Excel file
-data = pd.read_csv('database.csv')
 
 # Display the data in a dataframe
 with st.expander("Tabla"):
