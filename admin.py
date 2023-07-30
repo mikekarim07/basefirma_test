@@ -38,7 +38,7 @@ filtro_consultor_sr = st.sidebar.multiselect(
 )
 
 filtro_gerente = st.sidebar.multiselect(
-    "Selecciona al Gerente",
+    "Selecciona al Gerente 1️⃣",
     options = data['Gerente'].unique(),
     default = data['Gerente'].unique(),
 )
