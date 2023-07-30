@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import datetime
-from streamlit_option_menu import option_menu
+
 
 st.set_page_config(
     page_title="Base Firma",
@@ -13,12 +13,7 @@ st.set_page_config(
     }
 )
 
-selected = option_menu(
-    menu_title = None,
-    options = ["Nuevo Registro", "Data"],
-    icons = ["pencil-fill", "bar-chart-fill"],
-    orientation = "horizontal",
-)
+st.sidebar.image("BaseFirmaLogo.png", caption="Your Go-To Transfer Pricing Firm in the Americas")
 
 st.image("BaseFirmaLogo.png", width=150)
 st.header('KPIs Dashboard')
