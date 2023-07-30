@@ -41,9 +41,9 @@ with st.form("Create new record"):
         proyecto = st.text_input("Proyecto")
     
     with col2:
-        consultor = st.text_input("Consultor")
-        senior = st.text_input("Senior")
-        gerente = st.text_input("Gerente")
+        consultor = st.selectbox("Seleciona al Grupo:", consultores)
+        senior = st.selectbox("Seleciona al Grupo:", consultores_sr)
+        gerente = st.selectbox("Seleciona al Grupo:", gerentes)
         
     submit_button = st.form_submit_button(label='Add Record')
 
