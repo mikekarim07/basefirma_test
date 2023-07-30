@@ -49,7 +49,7 @@ with st.form("Create new record", clear_on_submit=True):
         tiempo_est = st.number_input("Horas Estimadas")
         tiempo_real = st.number_input("Horas Reales")
         fecha_est = st.date_input("Fehca Estimada de Entrega", datetime.date())
-        fecha_real = st.date_input("Fehca Real de Entrega", datetime.date())
+        fecha_real = st.date_input("Fehca Real de Entrega", datetime.date(2023,1,1))
 
     submit_button = st.form_submit_button(label='Add Record')
 
