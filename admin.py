@@ -55,7 +55,7 @@ with st.form("Create new record", clear_on_submit=True):
 
 # If the form is submitted, add the new record to the DataFrame
 if submit_button:
-    new_record = {"Cliente": cliente, "Sociedad": sociedad, "Proyecto": proyecto, "Consultor": consultor, "Senior": senior, "Gerente": gerente, "Tiempo estimado de Atividad": tiempo_est, "Fecha Planeada": fecha_est,
+    new_record = {"Cliente": cliente, "Sociedad": sociedad, "Proyecto": proyecto, "Consultor": consultor, "Senior": senior, "Gerente": gerente, "Tiempo estimado de Actividad": tiempo_est, "Fecha Planeada": fecha_est,
                  "Fecha de entrega efectiva": fecha_real, "Tiempo Real": tiempo_real}
     new_row = pd.DataFrame([new_record])
     data = pd.concat([data, new_row], ignore_index=True)
