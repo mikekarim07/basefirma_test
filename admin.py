@@ -21,7 +21,8 @@ st.sidebar.image("BaseFirmaLogo.png", caption="Your Go-To Transfer Pricing Firm 
 st.sidebar.header("Aplicar los filtros")
 Clientes = st.sidebar.multiselect(
     "Selecciona al Grupo Corporativo",
-    options = data['Cliente'].unique()
+    options = data['Cliente'].unique(),
+    default = data['Cliente'].unique(),
 )
 
 # st.image("BaseFirmaLogo.png", width=150)
