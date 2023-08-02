@@ -28,7 +28,7 @@ filtro_clientes = st.sidebar.multiselect(
 filtro_consultor = st.sidebar.multiselect(
     "Selecciona al Consultor",
     options = data['Consultor'].unique(),
-    default = data['Consultor'].unique(),
+    # default = data['Consultor'].unique(),
 )
 
 filtro_consultor_sr = st.sidebar.multiselect(
