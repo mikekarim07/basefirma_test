@@ -92,7 +92,7 @@ if submit_button:
 st.write("Updated Data:")
 
 kpis_empleado = data.query(
-    "Cliente==@grupos & Consultor==@consultores & Senior==@consultores_sr & Gerente==@gerentes"
+    "Cliente==@grupos & Consultor==@consultores & Senior==@consultores_sr & Gerente==@gerentes")
 
 tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
