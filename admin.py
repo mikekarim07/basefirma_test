@@ -96,8 +96,10 @@ kpis_empleado = pd.DataFrame(data)
 # kpis_empleado = data.query(
     # "Cliente==@grupos and Consultor==@consultores and Senior==@consultores_sr and Gerente==@gerentes")
 
-kpis_empleado = kpis_empleado[(kpis_empleado['Cliente'] == grupos) & (kpis_empleado['Consultor'] == consultores)]
-                
+# kpis_empleado = kpis_empleado[(kpis_empleado['Cliente'] == grupos) & (kpis_empleado['Consultor'] == consultores)]
+kpis_empleado = data.query(
+    "Cliente in @filtro_clientes & Consultor in @filtro_consultor & Senior in @filtro_consultor_sr & Gerente in @filtro_gerente"
+)
 
 tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
