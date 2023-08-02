@@ -50,21 +50,21 @@ st.header('KPIs Dashboard')
 
 tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
-    with tab1:
+with tab1:
 
-    with tab2:
+with tab2:
 
-    with tab3:
-        # Display the data in a dataframe
-        with st.expander("Tabla"):
-            st.dataframe(data)
-        #--settings--
-        gerentes = ["Jaime Romero", "Karen Ramos"]
-        consultores = ["Jorge Amaya", "Leslie Castillo", "Martin Rivera", "Rebeca Sandoval", "Otro"] 
-        consultores_sr = ["Brenda Salazar", "Christian Huitron", "Guillermo Pato"]
-        grupos = ["CHUBB", "ACCIONA", "Crehana", "Corona", "Adabe Capital", "Luxottica", "Grupo IAMSA", "Melia"]
-        sociedades = ["ABA Asistencias", "ABA Garantias SA de CV", "Acciona Agua Mexico S RL CV (AGUA)", "Acciona Energía México, S. de R.L. de C.V. (ENERGIA)", "Acciona Energía Servicios México, S. de R.L. de C.V. (ENERGIA)", "Acciona Eólica Santa Cruz S. R.L. de C.V. (ENERGIA)"
-                      "Acciona Forwarding (SERVICES)", "Acciona Infraestructuras México, S.A. de C.V. (INFRAESTRUCTURA)", "Acciona Infraestructuras Residenciales México, S.A. de C.V. (INFRAESTRUCTURA)"]
+with tab3:
+    # Display the data in a dataframe
+    with st.expander("Tabla"):
+        st.dataframe(data)
+    #--settings--
+    gerentes = ["Jaime Romero", "Karen Ramos"]
+    consultores = ["Jorge Amaya", "Leslie Castillo", "Martin Rivera", "Rebeca Sandoval", "Otro"] 
+    consultores_sr = ["Brenda Salazar", "Christian Huitron", "Guillermo Pato"]
+    grupos = ["CHUBB", "ACCIONA", "Crehana", "Corona", "Adabe Capital", "Luxottica", "Grupo IAMSA", "Melia"]
+    sociedades = ["ABA Asistencias", "ABA Garantias SA de CV", "Acciona Agua Mexico S RL CV (AGUA)", "Acciona Energía México, S. de R.L. de C.V. (ENERGIA)", "Acciona Energía Servicios México, S. de R.L. de C.V. (ENERGIA)", "Acciona Eólica Santa Cruz S. R.L. de C.V. (ENERGIA)"
+                  "Acciona Forwarding (SERVICES)", "Acciona Infraestructuras México, S.A. de C.V. (INFRAESTRUCTURA)", "Acciona Infraestructuras Residenciales México, S.A. de C.V. (INFRAESTRUCTURA)"]
 
 
 # Create a form to create a new record
