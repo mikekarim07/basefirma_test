@@ -94,7 +94,7 @@ st.write("Updated Data:")
 kpis_empleado = pd.DataFrame(data)
 
 kpis_empleado = data.query(
-    "Cliente==@grupos & Consultor==@consultores & Senior==@consultores_sr & Gerente==@gerentes")
+    "Cliente==@grupos and Consultor==@consultores and Senior==@consultores_sr and Gerente==@gerentes")
 
 tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
@@ -114,4 +114,4 @@ with tab3:
 
 
 
-st.dataframe(data)
+# st.dataframe(data)
