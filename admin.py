@@ -91,6 +91,8 @@ if submit_button:
 # Display the updated data in a dataframe
 st.write("Updated Data:")
 
+kpis_empleado = pd.Dataframe("data")
+
 kpis_empleado = data.query(
     "Cliente==@grupos & Consultor==@consultores & Senior==@consultores_sr & Gerente==@gerentes")
 
