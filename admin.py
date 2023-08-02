@@ -48,23 +48,13 @@ filtro_gerente = st.sidebar.multiselect(
 # st.image("BaseFirmaLogo.png", width=150)
 st.header('KPIs Dashboard')
 
-tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
-
-with tab1:
-    st.subheader("KPI's por empleado")
-with tab2:
-    st.subheader("KPI's por Proyecto")
-with tab3:
-    # Display the data in a dataframe
-    with st.expander("Tabla"):
-        st.dataframe(data)
     #--settings--
-    gerentes = ["Jaime Romero", "Karen Ramos"]
-    consultores = ["Jorge Amaya", "Leslie Castillo", "Martin Rivera", "Rebeca Sandoval", "Otro"] 
-    consultores_sr = ["Brenda Salazar", "Christian Huitron", "Guillermo Pato"]
-    grupos = ["CHUBB", "ACCIONA", "Crehana", "Corona", "Adabe Capital", "Luxottica", "Grupo IAMSA", "Melia"]
-    sociedades = ["ABA Asistencias", "ABA Garantias SA de CV", "Acciona Agua Mexico S RL CV (AGUA)", "Acciona Energía México, S. de R.L. de C.V. (ENERGIA)", "Acciona Energía Servicios México, S. de R.L. de C.V. (ENERGIA)", "Acciona Eólica Santa Cruz S. R.L. de C.V. (ENERGIA)"
-                  "Acciona Forwarding (SERVICES)", "Acciona Infraestructuras México, S.A. de C.V. (INFRAESTRUCTURA)", "Acciona Infraestructuras Residenciales México, S.A. de C.V. (INFRAESTRUCTURA)"]
+gerentes = ["Jaime Romero", "Karen Ramos"]
+consultores = ["Jorge Amaya", "Leslie Castillo", "Martin Rivera", "Rebeca Sandoval", "Otro"] 
+consultores_sr = ["Brenda Salazar", "Christian Huitron", "Guillermo Pato"]
+grupos = ["CHUBB", "ACCIONA", "Crehana", "Corona", "Adabe Capital", "Luxottica", "Grupo IAMSA", "Melia"]
+sociedades = ["ABA Asistencias", "ABA Garantias SA de CV", "Acciona Agua Mexico S RL CV (AGUA)", "Acciona Energía México, S. de R.L. de C.V. (ENERGIA)", "Acciona Energía Servicios México, S. de R.L. de C.V. (ENERGIA)", "Acciona Eólica Santa Cruz S. R.L. de C.V. (ENERGIA)"
+              "Acciona Forwarding (SERVICES)", "Acciona Infraestructuras México, S.A. de C.V. (INFRAESTRUCTURA)", "Acciona Infraestructuras Residenciales México, S.A. de C.V. (INFRAESTRUCTURA)"]
 
 
 # Create a form to create a new record
@@ -100,4 +90,26 @@ if submit_button:
 
 # Display the updated data in a dataframe
 st.write("Updated Data:")
+
+kpis_empleado = data.query(
+    "Cliente==@grupos & Consultor==@consultores & Senior==@consultores_sr & Gerente==@gerentes"
+
+tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
+
+with tab1:
+    st.subheader("KPI's por empleado")
+    st.dataframe("kpis_empleado")
+with tab2:
+    st.subheader("KPI's por Proyecto")
+with tab3:
+    # Display the data in a dataframe
+    with st.expander("Tabla"):
+        st.dataframe(data)
+
+
+
+
+
+
+
 st.dataframe(data)
