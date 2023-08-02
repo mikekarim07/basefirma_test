@@ -100,7 +100,7 @@ tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
 with tab1:
     st.subheader("KPI's por empleado")
-    st.dataframe("kpis_empleado")
+    st.dataframe('kpis_empleado')
 with tab2:
     st.subheader("KPI's por Proyecto")
 with tab3:
