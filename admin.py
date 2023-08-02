@@ -51,9 +51,9 @@ st.header('KPIs Dashboard')
 tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
 with tab1:
-
+    st.subheader("KPI's por empleado")
 with tab2:
-
+    st.subheader("KPI's por Proyecto")
 with tab3:
     # Display the data in a dataframe
     with st.expander("Tabla"):
