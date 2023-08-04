@@ -1,3 +1,11 @@
 ﻿Cliente,Sociedad,Proyecto,Actividad,Consultor,Senior,Gerente,Socio,Tiempo estimado de Actividad,Fecha Planeada,Fecha de entrega efectiva,Tiempo Real,¿Cumplio?,Razones
 CHUBB,ABA Garantias SA de CV,EPT 2022,Envío de Borrador a Cliente,Sofia Vences,Brenda Salazar,Jaime Romero,,20,07/07/2023,12/07/2023,24,No,El cliente envio cambios en la información financiera y se tuvieron que actualizar los calculos
 MELIA,Cala Formetor S.A. de C.V.,EPT 2022,Envío de Anexos/Declaraciones,Rebeca Sandoval,Martín Rivera,Karen Ramos,,4,08/07/2023,08/07/2023,4,Si,
+CHUBB,ABA Garantias SA de CV,EPT 2022,Envío de Borrador al Senior,Sofia Vences,Brenda Salazar,Jaime Romero,,10,03/07/2023,03/07/2023,10,Si,
+Luxottica,Administración Óptica Lux S.A. de C.V.,EPT 2022,Envío de Borrador al Senior,Sofia Vences,Brenda Salazar,Jaime Romero,,15,02/06/2023,03/06/2023,18,No,Recalculos
+Casas Perdura,Administradora de Renta S.A. de C.V.,EPT 2022,Envío de Borrador al Senior,Sofia Vences,Brenda Salazar,Jaime Romero,,12,02/06/2023,03/06/2023,12,Si,
+Arclad,"Arclad de México, S.A. de C.V.",EPT 2022,Front Loading,Sofia Vences,Brenda Salazar,Jaime Romero,,9,02/06/2023,03/06/2023,9,Si,
+BORR Drilling,"Borr Drilling Contracting, S. de R.L. de C.V.",EPT 2022,Envío de RDI,Sofia Vences,Brenda Salazar,Jaime Romero,,18,02/06/2023,03/06/2023,22,No,Recalculos
+CRS,CRS México,EPT 2022,Envío de RDI,Sofia Vences,Guillermo Pato,Jaime Romero,,12,02/06/2023,03/06/2023,11,Si,
+CRS,CRS México,EPT 2022,Conseguir información,Sofia Vences,Guillermo Pato,Jaime Romero,,13,02/06/2023,03/06/2023,12,Si,
+Sherwin Williams,"Productos Químicos y Pinturas, S.A. de C.V",EPT 2022,Envío de borrador al Senior,Sofia Vences,Brenda Salazar,Jaime Romero,,14,02/06/2023,03/06/2023,12,Si,
