@@ -98,7 +98,7 @@ kpis_empleado = data.query(
 )
 
 resumen_kpis_emp = kpis_empleado.groupby(by=['Consultor'], as_index=False).agg({'Tiempo estimado de Actividad': 'sum','Tiempo Real': 'sum'})
-                
+st.dataframe(resumen_kpis_emp)                
 
 tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
