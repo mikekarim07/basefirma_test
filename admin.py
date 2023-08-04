@@ -93,13 +93,12 @@ st.write("Updated Data:")
 
 kpis_empleado = pd.DataFrame(data)
 
-# kpis_empleado = data.query(
-    # "Cliente==@grupos and Consultor==@consultores and Senior==@consultores_sr and Gerente==@gerentes")
-
-# kpis_empleado = kpis_empleado[(kpis_empleado['Cliente'] == grupos) & (kpis_empleado['Consultor'] == consultores)]
 kpis_empleado = data.query(
     "Cliente in @filtro_clientes & Consultor in @filtro_consultor & Senior in @filtro_consultor_sr & Gerente in @filtro_gerente"
 )
+
+resumen_kpis_emp = kpis_empleado.groupby(by=['Consultor'], as_index=False).agg({'Tiempo estimado de Actividad': 'sum','Tiempo Real': 'sum'})
+                
 
 tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
