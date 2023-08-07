@@ -68,7 +68,9 @@ kpis_empleado = data.query(
 )
 
 resumen_kpis_emp = kpis_empleado.groupby(by=['Consultor'], as_index=False).agg({'Tiempo estimado de Actividad': 'sum','Tiempo Real': 'sum'})
-st.dataframe(resumen_kpis_emp)                
+tareas_cumplidas = len(resumen_kpis_emp[resumen_kpis_emp['¿Cumplio?']=='Si'])
+st.metric(label="Tareas Cumplidas", value= tareas_cumplidas) #, delta="1.2 °F"
+# st.dataframe(resumen_kpis_emp)                
 
 tab1, tab2, tab3, tab4 = st.tabs(["Alta Registro", "KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
