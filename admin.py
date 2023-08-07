@@ -57,36 +57,6 @@ sociedades = ["ABA Asistencias", "ABA Garantias SA de CV", "Acciona Agua Mexico 
               "Acciona Forwarding (SERVICES)", "Acciona Infraestructuras México, S.A. de C.V. (INFRAESTRUCTURA)", "Acciona Infraestructuras Residenciales México, S.A. de C.V. (INFRAESTRUCTURA)"]
 
 
-# Create a form to create a new record
-with st.form("Create new record", clear_on_submit=True):
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        cliente = st.selectbox("Seleciona al Grupo:", grupos)
-        sociedad = st.selectbox("Seleciona la entidad legal:", sociedades)
-        proyecto = st.text_input("Proyecto")
-    
-    with col2:
-        consultor = st.selectbox("Seleciona al Consultor:", consultores)
-        senior = st.selectbox("Seleciona al Consultor Sr:", consultores_sr)
-        gerente = st.selectbox("Seleciona al Gerente:", gerentes)
-
-    with col3:
-        tiempo_est = st.number_input("Horas Estimadas")
-        tiempo_real = st.number_input("Horas Reales")
-        fecha_est = st.date_input("Fecha Estimada de Entrega", datetime.date(2023,1,1))
-        fecha_real = st.date_input("Fecha Real de Entrega", datetime.date(2023,1,1))
-
-    submit_button = st.form_submit_button(label='Add Record')
-
-# If the form is submitted, add the new record to the DataFrame
-if submit_button:
-    new_record = {"Cliente": cliente, "Sociedad": sociedad, "Proyecto": proyecto, "Consultor": consultor, "Senior": senior, "Gerente": gerente, "Tiempo estimado de Actividad": tiempo_est, "Fecha Planeada": fecha_est,
-                 "Fecha de entrega efectiva": fecha_real, "Tiempo Real": tiempo_real}
-    new_row = pd.DataFrame([new_record])
-    data = pd.concat([data, new_row], ignore_index=True)
-    # Save the updated DataFrame to the CSV file
-    data.to_csv('database.csv', index=False)
 
 # Display the updated data in a dataframe
 st.write("Updated Data:")
@@ -100,14 +70,48 @@ kpis_empleado = data.query(
 resumen_kpis_emp = kpis_empleado.groupby(by=['Consultor'], as_index=False).agg({'Tiempo estimado de Actividad': 'sum','Tiempo Real': 'sum'})
 st.dataframe(resumen_kpis_emp)                
 
-tab1, tab2, tab3 = st.tabs(["KPIs por Empleado", "KPIs Por Proyecto", "Data"])
+tab1, tab2, tab3, tab4 = st.tabs(["Alta Registro", "KPIs por Empleado", "KPIs Por Proyecto", "Data"])
 
 with tab1:
+    st.subheader("Alta de nuevo registro")
+    # Create a form to create a new record
+    with st.form("Create new record", clear_on_submit=True):
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            cliente = st.selectbox("Seleciona al Grupo:", grupos)
+            sociedad = st.selectbox("Seleciona la entidad legal:", sociedades)
+            proyecto = st.text_input("Proyecto")
+        
+        with col2:
+            consultor = st.selectbox("Seleciona al Consultor:", consultores)
+            senior = st.selectbox("Seleciona al Consultor Sr:", consultores_sr)
+            gerente = st.selectbox("Seleciona al Gerente:", gerentes)
+    
+        with col3:
+            tiempo_est = st.number_input("Horas Estimadas")
+            tiempo_real = st.number_input("Horas Reales")
+            fecha_est = st.date_input("Fecha Estimada de Entrega", datetime.date(2023,1,1))
+            fecha_real = st.date_input("Fecha Real de Entrega", datetime.date(2023,1,1))
+    
+        submit_button = st.form_submit_button(label='Add Record')
+    
+    # If the form is submitted, add the new record to the DataFrame
+    if submit_button:
+        new_record = {"Cliente": cliente, "Sociedad": sociedad, "Proyecto": proyecto, "Consultor": consultor, "Senior": senior, "Gerente": gerente, "Tiempo estimado de Actividad": tiempo_est, "Fecha Planeada": fecha_est,
+                     "Fecha de entrega efectiva": fecha_real, "Tiempo Real": tiempo_real}
+        new_row = pd.DataFrame([new_record])
+        data = pd.concat([data, new_row], ignore_index=True)
+        # Save the updated DataFrame to the CSV file
+        data.to_csv('database.csv', index=False)
+    
+
+with tab2:
     st.subheader("KPI's por empleado")
     st.dataframe(kpis_empleado)
-with tab2:
-    st.subheader("KPI's por Proyecto")
 with tab3:
+    st.subheader("KPI's por Proyecto")
+with tab4:
     # Display the data in a dataframe
     with st.expander("Tabla"):
         st.dataframe(data)
