@@ -66,7 +66,7 @@ kpis_empleado = pd.DataFrame(data)
 kpis_empleado = data.query(
     "Cliente in @filtro_clientes & Consultor in @filtro_consultor & Senior in @filtro_consultor_sr & Gerente in @filtro_gerente"
 )
-total_tareas = len([kpis_empleado['Cumplio']])
+total_tareas = kpis_empleado.groupby(by=['Cumplio'], as_index=False).count()
 tareas_cumplidas = len(kpis_empleado[kpis_empleado['Cumplio']=='Si'])
 st.metric(label="Tareas Cumplidas", value= tareas_cumplidas) #, delta="1.2 °F"
 st.metric(label="Total Tareas", value= total_tareas) #, delta="1.2 °F"
