@@ -72,11 +72,18 @@ tareas_no_cumplidas = total_tareas - tareas_cumplidas
 pct_cumplimiento = (tareas_cumplidas/total_tareas)
 pct_cumplimiento = "{:.2%}".format(pct_cumplimiento)
 
-# Assuming you have calculated tareas_cumplidas and tareas_no_cumplidas
-st.metric(label="Tareas Cumplidas", value=tareas_cumplidas) #, delta=tareas_no_cumplidas)
-st.metric(label="Total Tareas", value= total_tareas)
-st.metric(label="% Cumplimiento", value= pct_cumplimiento)
-st.metric(label="Tareas No Cumplidas", value= tareas_no_cumplidas)
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.metric(label="Tareas Cumplidas", value=tareas_cumplidas) #, delta=tareas_no_cumplidas)
+
+with col2:
+    st.metric(label="Total Tareas", value= total_tareas)
+
+with col3:
+    st.metric(label="% Cumplimiento", value= pct_cumplimiento)
+
+with col4:
+    st.metric(label="Tareas No Cumplidas", value= tareas_no_cumplidas)
 
 resumen_kpis_emp = kpis_empleado.groupby(by=['Consultor'], as_index=False).agg({'Tiempo estimado de Actividad': 'sum','Tiempo Real': 'sum'})
 
