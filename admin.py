@@ -68,7 +68,7 @@ kpis_empleado = data.query(
 )
 total_tareas = kpis_empleado['Cumplio'].count()
 tareas_cumplidas = len(kpis_empleado[kpis_empleado['Cumplio']=='Si'])
-tareas_no_cumplidas = tareas_cumplidas-total_tareas
+tareas_no_cumplidas = (tareas_cumplidas-total_tareas).astype('int')
 pct_cumplimiento = (tareas_cumplidas/total_tareas)
 pct_cumplimiento = "{:.2%}".format(pct_cumplimiento)
 
