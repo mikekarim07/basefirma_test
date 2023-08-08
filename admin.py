@@ -68,10 +68,11 @@ kpis_empleado = data.query(
 )
 total_tareas = kpis_empleado['Cumplio'].count()
 tareas_cumplidas = len(kpis_empleado[kpis_empleado['Cumplio']=='Si'])
+tareas_no_cumplidas = total_tareas - tareas_cumplidas
 pct_cumplimiento = (tareas_cumplidas/total_tareas)
 pct_cumplimiento = "{:.2%}".format(pct_cumplimiento)
 
-st.metric(label="Tareas Cumplidas", value= tareas_cumplidas) #, delta="1.2 °F"
+st.metric(label="Tareas Cumplidas", value= tareas_cumplidas, delta=tareas_no_cumplidas)
 st.metric(label="Total Tareas", value= total_tareas)
 st.metric(label="% Cumplimiento", value= pct_cumplimiento)
 
