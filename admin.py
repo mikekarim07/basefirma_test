@@ -50,7 +50,7 @@ st.header('KPIs Dashboard')
 
     #--settings--
 gerentes = ["Jaime Romero", "Karen Ramos"]
-consultores = ["Jorge Amaya", "Leslie Castillo", "Martin Rivera", "Rebeca Sandoval", "Otro"] 
+consultores = ["Jorge Amaya", "Leslie Castillo", "Martin Rivera", "Rebeca Sandoval", "Sofia Vences", "Otro"] 
 consultores_sr = ["Brenda Salazar", "Christian Huitron", "Guillermo Pato"]
 grupos = ["CHUBB", "ACCIONA", "Crehana", "Corona", "Adabe Capital", "Luxottica", "Grupo IAMSA", "Melia"]
 sociedades = ["ABA Asistencias", "ABA Garantias SA de CV", "Acciona Agua Mexico S RL CV (AGUA)", "Acciona Energía México, S. de R.L. de C.V. (ENERGIA)", "Acciona Energía Servicios México, S. de R.L. de C.V. (ENERGIA)", "Acciona Eólica Santa Cruz S. R.L. de C.V. (ENERGIA)"
