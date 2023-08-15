@@ -10,7 +10,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
     menu_items={'Get Help': 'mailto:miguel.karim@karimortega.com'}
 )
-#
+st.sidebar.image("BaseFirmaLogo.png", caption="Your Go-To Transfer Pricing Firm in the Americas")
+
 # Load the Excel file
 upload_excel = st.sidebar.file_uploader("Carga el archivo de excel", type=["xlsx"], accept_multiple_files=False)
 database = None  # Initialize an empty DataFrame
