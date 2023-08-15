@@ -136,7 +136,8 @@ if upload_excel:
         # resumen_kpis_emp = kpis_consultor_fc_sr_gt_gp.groupby(by=['Consultor'], as_index=False).agg({'Tiempo estimado de Actividad': 'sum','Tiempo Real': 'sum'})
 
         # st.dataframe(resumen_kpis_emp)                
-        
+        st.divider()
+        st.write('Actividades')
         st.dataframe(kpis_consultor_fc_sr_gt_gp)
 
 
