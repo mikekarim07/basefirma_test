@@ -5,7 +5,7 @@ import datetime
 # Set Streamlit page configuration
 st.set_page_config(
     page_title="Base Firma",
-    page_icon="⏱",
+    # page_icon="⏱",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={'Get Help': 'mailto:miguel.karim@karimortega.com'}
