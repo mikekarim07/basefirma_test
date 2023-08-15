@@ -137,7 +137,7 @@ if upload_excel:
 
         # st.dataframe(resumen_kpis_emp)                
         st.divider()
-        st.write('Actividades')
+        st.write('Listado de Actividades')
         st.dataframe(kpis_consultor_fc_sr_gt_gp)
 
 
